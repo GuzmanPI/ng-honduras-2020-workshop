@@ -1,6 +1,7 @@
 import { AngularFireModule } from '@angular/fire';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +15,7 @@ import { environment } from '../environments/environment';
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
+		MatToolbarModule,
 		MatButtonModule,
 		AngularFireModule.initializeApp(environment.firebaseConfig),
 		BrowserAnimationsModule
