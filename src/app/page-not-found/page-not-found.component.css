@@ -1,0 +1,8 @@
+.bkw {
+    background-image: url("../../assets/images/pnf.jpg");
+    background-color: #e9e8f0; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}

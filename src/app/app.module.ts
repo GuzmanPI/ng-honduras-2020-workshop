@@ -1,4 +1,6 @@
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -10,15 +12,29 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LoginComponent } from './login/login.component';
+import { MatTableModule } from '@angular/material/table';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { environment } from '../environments/environment';
 import { MenuComponent } from './menu/menu.component';
+import { UsersComponent } from './users/users.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PolarGraphComponent } from './polar-graph/polar-graph.component';
+import { PieGraphComponent } from './pie-graph/pie-graph.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		LoginComponent,
 		ToolbarComponent,
-		MenuComponent
+		MenuComponent,
+		UsersComponent,
+		DashboardComponent,
+		HomeComponent,
+		PageNotFoundComponent,
+		PolarGraphComponent,
+		PieGraphComponent
 	],
 	imports: [
 		BrowserModule,
@@ -27,10 +43,13 @@ import { MenuComponent } from './menu/menu.component';
 		MatIconModule,
 		MatButtonModule,
 		MatMenuModule,
+		MatTableModule,
 		AngularFireModule.initializeApp(environment.firebaseConfig),
-		BrowserAnimationsModule
+		AngularFireAuthModule,
+		BrowserAnimationsModule,
+		NgxChartsModule
 	],
-	providers: [],
+	providers: [AngularFireAuthGuard],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}
