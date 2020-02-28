@@ -12,11 +12,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LoginComponent } from './login/login.component';
-import { MatTableModule } from '@angular/material/table';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { environment } from '../environments/environment';
 import { MenuComponent } from './menu/menu.component';
-import { UsersComponent } from './users/users.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -29,7 +27,6 @@ import { PieGraphComponent } from './pie-graph/pie-graph.component';
 		LoginComponent,
 		ToolbarComponent,
 		MenuComponent,
-		UsersComponent,
 		DashboardComponent,
 		HomeComponent,
 		PageNotFoundComponent,
@@ -43,7 +40,6 @@ import { PieGraphComponent } from './pie-graph/pie-graph.component';
 		MatIconModule,
 		MatButtonModule,
 		MatMenuModule,
-		MatTableModule,
 		AngularFireModule.initializeApp(environment.firebaseConfig),
 		AngularFireAuthModule,
 		BrowserAnimationsModule,
