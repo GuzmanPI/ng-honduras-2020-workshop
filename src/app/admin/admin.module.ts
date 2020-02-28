@@ -1,3 +1,4 @@
+import { SharedModule } from '../shared/shared.module';
 import { UsersComponent } from './users/users.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,6 +9,6 @@ import { AdminComponent } from './admin.component';
 
 @NgModule({
 	declarations: [AdminComponent, UsersComponent],
-	imports: [CommonModule, AdminRoutingModule, MatTableModule]
+	imports: [CommonModule, AdminRoutingModule, MatTableModule, SharedModule]
 })
 export class AdminModule {}
