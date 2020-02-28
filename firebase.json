@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "ng-honduras-workshop",
+      "public": "dist/ng-honduras-workshop",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

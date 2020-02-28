@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-architecture-workshop": {
+      "hosting": {
+        "ng-honduras-workshop": [
+          "angular-architecture-workshop"
+        ]
+      }
+    }
+  }
+}
