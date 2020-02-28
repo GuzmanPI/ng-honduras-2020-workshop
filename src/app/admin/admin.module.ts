@@ -1,3 +1,4 @@
+import { UbUiModule } from '../../../projects/ub-ui/src/lib/ub-ui.module';
 import { SharedModule } from '../shared/shared.module';
 import { UsersComponent } from './users/users.component';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,12 @@ import { AdminComponent } from './admin.component';
 
 @NgModule({
 	declarations: [AdminComponent, UsersComponent],
-	imports: [CommonModule, AdminRoutingModule, MatTableModule, SharedModule]
+	imports: [
+		CommonModule,
+		AdminRoutingModule,
+		MatTableModule,
+		SharedModule,
+		UbUiModule
+	]
 })
 export class AdminModule {}

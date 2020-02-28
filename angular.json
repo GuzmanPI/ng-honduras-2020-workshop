@@ -125,6 +125,163 @@
           "options": {}
         }
       }
+    },
+    "ub-ui": {
+      "projectType": "library",
+      "root": "projects/ub-ui",
+      "sourceRoot": "projects/ub-ui/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ub-ui/tsconfig.lib.json",
+            "project": "projects/ub-ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ub-ui/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ub-ui/src/test.ts",
+            "tsConfig": "projects/ub-ui/tsconfig.spec.json",
+            "karmaConfig": "projects/ub-ui/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ub-ui/tsconfig.lib.json",
+              "projects/ub-ui/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ub-users": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/ub-users",
+      "sourceRoot": "projects/ub-users/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ub-users",
+            "index": "projects/ub-users/src/index.html",
+            "main": "projects/ub-users/src/main.ts",
+            "polyfills": "projects/ub-users/src/polyfills.ts",
+            "tsConfig": "projects/ub-users/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/ub-users/src/favicon.ico",
+              "projects/ub-users/src/assets"
+            ],
+            "styles": [
+              "projects/ub-users/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ub-users/src/environments/environment.ts",
+                  "with": "projects/ub-users/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ub-users:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ub-users:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ub-users:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ub-users/src/test.ts",
+            "polyfills": "projects/ub-users/src/polyfills.ts",
+            "tsConfig": "projects/ub-users/tsconfig.spec.json",
+            "karmaConfig": "projects/ub-users/karma.conf.js",
+            "assets": [
+              "projects/ub-users/src/favicon.ico",
+              "projects/ub-users/src/assets"
+            ],
+            "styles": [
+              "projects/ub-users/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ub-users/tsconfig.app.json",
+              "projects/ub-users/tsconfig.spec.json",
+              "projects/ub-users/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ub-users/e2e/protractor.conf.js",
+            "devServerTarget": "ub-users:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ub-users:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-honduras-workshop",
