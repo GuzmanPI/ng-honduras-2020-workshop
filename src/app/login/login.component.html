@@ -1,7 +1,1 @@
-<div *ngIf="angularFireAuth.user | async as user; else showLogin">
-    <button mat-stroked-button (click)="logout()">Logout</button>
-  </div>
-
-<ng-template #showLogin>
-    <button mat-raised-button (click)="login()">Login with Google</button>
-</ng-template> 
+<button mat-raised-button (click)="login()">Login with Google</button>

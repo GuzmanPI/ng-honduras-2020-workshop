@@ -15,7 +15,4 @@ export class LoginComponent implements OnInit {
 	login() {
 		this.angularFireAuth.signInWithPopup(new auth.GoogleAuthProvider());
 	}
-	logout() {
-		this.angularFireAuth.signOut();
-	}
 }
